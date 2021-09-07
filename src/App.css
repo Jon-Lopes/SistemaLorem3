@@ -1,38 +1,86 @@
-.App {
+/*primeiro, resetar todos os elementos*/
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/*declarando as cores que vou usar*/
+:root{
+--white:#fff;
+--background: #e2e3e5;
+--text: #555555;
+--blue-dark:#4953b8;
+--blue-light:#2aa9e0;
+--black:#000000;
+}
+
+/*fazendo o fundo e alguns elementos*/
+body{
+  height: 98vh;
+  width: 98vw;
+  background: var(--background);
+  color: var(--text);
+}
+body, input, textarea, button{
+  font:400 1rem "Inter", sans-serif;
+}
+header{
+  width: 98vw;
+  position: relative;
+  margin-top: 50px;
+}
+#logo{
   text-align: center;
+  font-family: 'Euphoria Script', cursive;
+  color: var(--black);
+  font-size: 100px;
+
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+/*Agora os botoes, primeiro, ver a div deles, depois os botoes*/
+.mainDiv{
+  text-align:center;
 }
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
+.hideit1, .hideit2, .hideit3 {
+  display:flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  text-align: left;
+  border: 1px solid var(--blue-dark);
+  border-radius: 10px;
+  margin: 5% 20%;
+  padding: 2%;
+  /*display: hidden;*/
 }
 
-.App-link {
-  color: #61dafb;
+.divBtn{
+  margin: 2%;
 }
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+button{
+  cursor: pointer;
+  height: 50px;
+  width: 160px;
+  background-color: var(--blue-light);
+  border-radius: 10px;
+  text-transform: uppercase;
+  font: bold 20px "Inter", sans-serif;
+  color: var(--white);
+  padding: 0.5rem;
+  margin: 1%;
+}
+a {
+  text-decoration: none;
+  color: inherit;
+}
+div p{
+  margin: 3vw 0 2vw 0;
+}
+form{
+  display:flex;
+  flex-direction: column;
+  text-align: left;
+  
+  /* display: block;
+  text-align: left;
+  margin: 2vw 0 2vw 25%; */
 }

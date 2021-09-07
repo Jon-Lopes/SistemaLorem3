@@ -1,25 +1,64 @@
-import logo from './logo.svg';
 import './App.css';
+import { useState } from 'react';
+import Axios from 'axios';
+
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+
+  const [formNome, setFormNome] = useState("");
+  const [formDataInicio, setFormDataInicio] = useState("");
+  const [formDataFim, setFormDataFim] = useState("");
+  const [formValor, setFormValor] = useState(0);
+  const [formRisco, setFormRisco] = useState(0);
+  const [formMembros, setFormMembros] = useState("");
+  const [idSelector, setIdSelector] = useState("");
+  const [roiValue, setRoiValue] = useState(0);
+
+
+
+  const displayHidden1 = () => {
+    console.log("ok");
+  };
+
+  return (<div className="App">
+    <div className='mainDiv'><header><p id='logo'>Loren Ipsum Inc.</p></header></div>
+    <div className='mainDiv'><p>Mostrar tabela aqui</p></div>
+
+    <div className='mainDiv'>
+      <div className='divBtn'>
+        <button onClick={displayHidden1} id='cadastrar1'>Cadastrar</button>
+        <button onClick={displayHidden1} id='editar1'>Editar</button>
+        <button id='excluir1'>Excluir</button>
+        <button id='simular1'>Simular</button> </div>
     </div>
-  );
+
+
+
+    <div className='mainDiv'><div className='hideit1'><label for="hideit1">Digite ID do Projeto</label><input id="idSelected" type="number" min="1" max="document.write(numProjDB)" onChange={(event) => { setIdSelector(event.target.value); }} required></input>
+      <button className='divBtn' id='excluir2'>Excluir</button>
+      <button className='divBtn' id='simular2'>Simular</button></div></div>
+
+    <div className='mainDiv'>
+      <div className='hideit2'><label for="hideit2"> - Informações do Projeto - </label>
+        <p><i>*Todos os campos são obrigatórios</i></p>
+        <label>Nome do Projeto</label> <input id="formNome" type="text" onChange={(event) => { setFormNome(event.target.value); }} required></input>
+        <label>Data de Início</label> <input id="formDataInicio" type="date" placeholder="dd-mm-aaaa" value=""
+          min="2008-08-08" max="2035-12-31" onChange={(event) => { setFormDataInicio(event.target.value); }} required></input>
+        <label>Data de Término</label> <input id="formDataFim" type="date" placeholder="dd-mm-aaaa" value=""
+          min="2008-08-08" max="2035-12-31" onChange={(event) => { setFormDataFim(event.target.value); }} required></input>
+        <label>Valor do Projeto</label> <input name="formValor" type="number" step=".01" onChange={(event) => { setFormValor(event.target.value); }} required></input>
+        <label>Nível de Risco</label> <input name="formRisco" type="number" min="0" max="2" onChange={(event) => { setFormRisco(event.target.value); }} required></input>
+        <label>Membros do Projeto</label> <input name="formMembros" type="text" onChange={(event) => { setFormMembros(event.target.value); }} required></input>
+        <button className="divBtn" id='enviar1'>Enviar</button>
+      </div>
+    </div> */}
+
+    <div className='mainDiv'><div className='hideit3'><label for="hideit3"> - Simular Retorno de Investimento - </label>
+      <label>Valor do Investimento</label><input name="formInvest" type="number" step=".01" onChange={(event) => { setRoiValue(event.target.value); }} required></input>
+      <button className='divBtn' type="submit" form="roiProj" id='simular3'>Simular</button>
+    </div></div>
+
+  </div>);
 }
 
 export default App;
