@@ -42,7 +42,7 @@ header{
 .mainDiv{
   text-align:center;
 }
-.hideit1, .hideit2, .hideit3 {
+.hideit1, .hideit2, .hideit3, .hideit4 {
   display:flex;
   flex-direction: column;
   text-align: left;
@@ -60,8 +60,8 @@ header{
 }
 
 .listaProj h3{
-  margin: 1.5vw;
-  font-size: 2vw;
+  margin: 0.5vw;
+  font-size: 1.5vw;
 }
 
 .divBtn{
