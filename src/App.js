@@ -37,7 +37,7 @@ function App() {
   };
 
   const delProj = (idProj) => {
-    Axios.delete(`http://localhost:3001/delete/${idProj}`).then((response) => { setAllList(allList.filter((val) => { return val.idProj !== idProj; })); });
+    Axios.delete(`http://localhost:3001/delete/${idProj}`);//.then((response) => { setAllList(allList.filter((val) => { return val.idProj !== idProj; })); });
     alert("Projeto deletado. Aperte F5 para Atualizar.");
   };
 
@@ -45,7 +45,6 @@ function App() {
     const valorProjDB = () => { Axios.get("http://localhost:3001/roi/valor", { id: id }).then((response) => { setAllList(response.data); }); };
     const riscoProjDB = () => { Axios.get("http://localhost:3001/roi/risco", { id: id }).then((response) => { setAllList(response.data); }); };
     var roiValue = () => { return document.querySelector('#roiValue'); };
-
     console.log(valorProjDB);
     console.log(riscoProjDB);
     console.log(roiValue);
@@ -75,7 +74,7 @@ function App() {
     };
   };
 
-  //GERENCIAR ELEMENTOS VIZUAIS
+  //GERENCIAR ELEMENTOS VIZUAIS (parte extra do propjeto)
   // const displayHidden2 = () => {
   //   console.log("ok");
   // };
@@ -140,7 +139,7 @@ function App() {
     </div>
 
     <div className='mainDiv'>
-      <div className='hideit4'><label> - Informações do Projeto - </label>
+      <div className='hideit4'><label> - Inserir Novo Projeto - </label>
         <p><i>Todos os campos são obrigatórios*</i></p>
         <label>Nome do Projeto*</label> <input id="formNome" type="text" onChange={(event) => { setFormNome(event.target.value); }} required></input>
         <label>Data de Início*</label> <input id="formDataInicio" type="date" onChange={(event) => { setFormDataInicio(event.target.value); }} required></input>
@@ -149,7 +148,7 @@ function App() {
         <label>Nível de Risco* (0=baixo; 1=médio; 2=alto) </label> <input name="formRisco" type="number" min="0" max="2" onChange={(event) => { setFormRisco(event.target.value); }} required></input>
         <label>Membros do Projeto*</label> <input name="formMembros" type="text" onChange={(event) => { setFormMembros(event.target.value); }} required></input>
         <div className="divBtn">
-          <button onClick={addProj} id='cadastrarBtn'>Cadastrar</button>
+          <button onClick={addProj} id='cadastrarBtn'>Inserir</button>
         </div>
       </div>
     </div>
